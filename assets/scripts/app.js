@@ -6,6 +6,30 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const userEvents = require('./events.js')
+const appEvents = require('./appEvents.js')
+
 $(() => {
-  // your JS code goes here
+  // Site
+  $('.auth').hide()
+
+  $('#register').on('submit', userEvents.onRegisterUser)
+  $('#register').on('click', userEvents.onRegisterClick)
+  $('#log-in').on('submit', userEvents.onSignInUser)
+  $('#log-out').on('click', userEvents.onSignOutUser)
+  $('#change-pass').on('submit', userEvents.onChangePass)
+  $('#change-pass').on('click', userEvents.onChangePassClick)
+
+  $('#createTraining').on('submit', appEvents.onCreateTraining)
+  $('#updateTraining').on('submit', appEvents.onUpdateTraining)
+  $('#deleteTraining').on('submit', appEvents.onDeleteTraining)
+  $('#indexTraining').on('click', appEvents.onIndexTraining)
+  $('#searchTraining').on('submit', appEvents.onSearchTraining)
+
+  // $('#createTraining').on('submit', appEvents.onCreateTraining)
+  // $('#updateTraining').on('submit', appEvents.onUpdateTraining)
+  // $('#deleteTraining').on('submit', appEvents.onDeleteTraining)
+  // $('#indexTraining').on('click', appEvents.onIndexTraining)
+  // $('#searchTraining').on('submit', appEvents.onSearchTraining)
+
 })

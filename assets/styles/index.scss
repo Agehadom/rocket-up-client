@@ -1,1 +1,67 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+  font-size: 18px;
+  //justify-content: center;
+  text-align: center;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 24px;
+  font-style: italic;
+  text-align: right;
+  margin: 2px 5px 2px 10px;
+  background-color: #829388;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.top_bar {
+  display: grid;
+  background-color: red;
+  margin-bottom: 2px;
+  padding: 2px;
+  //box-shadow: 2px 2px 10px;
+  grid-template-columns: 25% 50% 25%;
+}
+
+.cum {
+  display: grid;
+  //background-color: #972873;
+  //grid-area: Area;
+  gap: 8px;
+  grid-template-columns: 120px 120px;
+  grid-template-rows: 70px 70px;
+  justify-content: center;
+  margin: 2px;
+  border-radius: 10px;
+}
+
+.top_bar span {
+  font-size: 12px;
+  text-align: left;
+  display: grid;
+  //grid-template-columns: 1fr 1fr 1fr;
+  //grid: 'Area Area';
+  margin: 2px 10px 2px 5px;
+  padding: 10px;
+}
+
+.content_button_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: green;
+  margin: 2px;
+  padding: 10px;
+  height: 40vh;
+  grid-gap: 10px;
+  position: sticky;
+  top: 200px;
+  box-shadow: 0px 2px 10px inset;
+}
+
+body {
+  background-color: #800020;
+}
