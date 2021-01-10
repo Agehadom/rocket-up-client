@@ -3971,7 +3971,7 @@ var deletetraining = function deletetraining() {
   $('.unauth').show();
 
   return $.ajax({
-    url: config.apiUrl + '/sign-out/',
+    url: config.apiUrl + '/training/',
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -3981,7 +3981,7 @@ var deletetraining = function deletetraining() {
 
 var viewtraining = function viewtraining() {
   return $.ajax({
-    url: config.apiUrl + '/training',
+    url: config.apiUrl + '/training/',
     method: 'GET'
     // headers: {
     //   Authorization: 'Bearer ' + store.user.token
@@ -16811,7 +16811,7 @@ module.exports = {
 
 var apiUrl = void 0;
 var apiUrls = {
-  production: 'https://serene-bastion-18925.herokuapp.com/',
+  production: 'https://serene-bastion-18925.herokuapp.com',
   development: 'http://localhost:4741'
 };
 
