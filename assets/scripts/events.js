@@ -1,7 +1,6 @@
 const api = require('./api')
-const ui = require('./ui')
+const ui_user = require('./userUi')
 const getFormFields = require('./../../lib/get-form-fields.js')
-const gameLogic = require('./gameLogic')
 
 
 // User Events
@@ -14,8 +13,8 @@ const onRegisterUser = function (event) {
   console.log(formData);
 
   api.signup(formData)
-  .then(ui.onRegisterUser)
-  .catch(ui.onRegisterFailure)
+  .then(ui_user.onRegisterUser)
+  .catch(ui_user.onRegisterFailure)
 }
 
 const onRegisterClick = function (event) {
@@ -30,18 +29,16 @@ const onSignInUser = function (event) {
   const formData = getFormFields(form)
 
   api.signin(formData)
-  .then(ui.onSignInUser)
-  .catch(ui.onLogInFailure)
+  .then(ui_user.onSignInUser)
+  .catch(ui_user.onLogInFailure)
 }
 
 const onSignOutUser = function (event) {
   event.preventDefault()
 
-  gameLogic.cleanPage()
-
   api.signout()
-  .then(ui.onSignOutUser)
-  .catch(ui.onFailure)
+  .then(ui_user.onSignOutUser)
+  .catch(ui_user.onFailure)
 }
 
 const onChangePass = function (event) {
@@ -51,20 +48,12 @@ const onChangePass = function (event) {
   const data = getFormFields(form)
 
   api.changepass(data)
-  .then(ui.onChangePass)
-  .catch(ui.onPassChangeFailure)
+  .then(ui_user.onChangePass)
+  .catch(ui_user.onPassChangeFailure)
 }
 
 const onChangePassClick = function (event) {
   $('#changePassModalLabel').text('Change Password Below.')
-}
-
-const onViewTrainings = function (event) {
-  event.preventDefault()
-
-  api.viewgames()
-  .then(ui.onViewGames)
-  .catch(ui.onFailure)
 }
 
 module.exports = {
@@ -72,7 +61,6 @@ module.exports = {
   onSignInUser,
   onSignOutUser,
   onChangePass,
-  onViewTrainings,
   onRegisterClick,
   onChangePassClick
 };

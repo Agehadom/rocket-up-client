@@ -48,16 +48,6 @@ const changepass = function (formData) {
 
 // App API
 
-const viewtrainings = function () {
-  return $.ajax({
-    url: config.apiUrl + '/training',
-    method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    }
-  })
-}
-
 const createtraining = function () {
 
   return $.ajax({
@@ -71,7 +61,8 @@ const createtraining = function () {
           name: store.training.name,
           type: store.training.type,
           difficulty: store.training.difficulty
-      }
+        }
+      },
   })
 }
 
@@ -88,7 +79,41 @@ const updatetraining = function () {
           name: store.training.name,
           type: store.training.type,
           difficulty: store.training.difficulty
-      }
+      },
+    },
+  })
+}
+
+const deletetraining = function () {
+
+  $('.auth').hide()
+  $('.unauth').show()
+
+  return $.ajax({
+    url: config.apiUrl + '/sign-out/',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const viewtraining = function () {
+  return $.ajax({
+    url: config.apiUrl + '/training',
+    method: 'GET',
+    // headers: {
+    //   Authorization: 'Bearer ' + store.user.token
+    // }
+  })
+}
+
+const searchtraining = function () {
+  return $.ajax({
+    url: config.apiUrl + '/training/' + store.training._id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -98,7 +123,9 @@ module.exports = {
   signin,
   signout,
   changepass,
-  viewtrainings,
   createtraining,
-  updatetraining
+  updatetraining,
+  deletetraining,
+  viewtraining,
+  searchtraining
 };

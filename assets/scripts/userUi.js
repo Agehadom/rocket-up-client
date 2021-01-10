@@ -31,7 +31,7 @@ const onChangePass = function (response) {
 }
 
 const onFailure = function () {
-  $('.game_container p').text("Hey, if you see this, something broke in a very bizarre way. You are most likely no longer connected to the internet or the site host is down.");
+  $('.top_bar h2').text("Hey, if you see this, something broke in a very bizarre way. You are most likely no longer connected to the internet or the site host is down.");
 }
 
 const onRegisterFailure = function () {
@@ -49,16 +49,4 @@ const onLogInFailure = function () {
   $('form').trigger('reset')
 }
 
-const createTraining = function (gameResponse) {
-  store.game = gameResponse.game
-  $('.actualPlayButton h1').text("Replay")
-  $('.button_container').hide()
-}
-
-const onViewTrainings = function (gameResponse) {
-  $('.welcomeMessage p').html(store.user.email + " has played " + gameResponse.games.length + " games!")
-}
-
-// Game API UI
-
-module.exports = {onRegisterUser, onSignInUser, onSignOutUser, onFailure, createTraining, onChangePass, onViewTrainings, onLogInFailure, onRegisterFailure, onPassChangeFailure}
+module.exports = {onRegisterUser, onSignInUser, onSignOutUser, onFailure, onChangePass, onLogInFailure, onRegisterFailure, onPassChangeFailure}
