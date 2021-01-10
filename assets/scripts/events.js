@@ -18,12 +18,12 @@ const onRegisterUser = function (event) {
 }
 
 const onRegisterClick = function (event) {
-  $('#registerModalLabel').text('Register Below.')
+  $('#registerModalLabel').text('Registration')
 }
 
 const onSignInUser = function (event) {
   event.preventDefault();
-  $('#loginModalLabel').text('Log In Below.')
+  $('#loginModalLabel').text('Login')
 
   const form = event.target
   const formData = getFormFields(form)
@@ -35,6 +35,8 @@ const onSignInUser = function (event) {
 
 const onSignOutUser = function (event) {
   event.preventDefault()
+
+  $('.top_bar h2').html("User logged off.")
 
   api.signout()
   .then(ui_user.onSignOutUser)

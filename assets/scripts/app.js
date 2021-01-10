@@ -11,7 +11,7 @@ const appEvents = require('./appEvents.js')
 
 $(() => {
   // Site
-  //$('.auth').hide()
+  $('.auth').hide()
 
   $('#register').on('submit', userEvents.onRegisterUser)
   $('#register').on('click', userEvents.onRegisterClick)
@@ -25,5 +25,11 @@ $(() => {
   $('#deleteTraining').on('submit', appEvents.onDeleteTraining)
   $('#indexTraining').on('click', appEvents.onIndexTraining)
   $('#searchTraining').on('submit', appEvents.onSearchTraining)
+
+  // $('#createTraining').on('submit', appEvents.onCreateTraining)
+  // $('#updateTraining').on('submit', appEvents.onUpdateTraining)
+  // $('#deleteTraining').on('submit', appEvents.onDeleteTraining)
+  // $('#indexTraining').on('click', appEvents.onIndexTraining)
+  // $('#searchTraining').on('submit', appEvents.onSearchTraining)
 
 })
