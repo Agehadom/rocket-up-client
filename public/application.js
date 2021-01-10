@@ -3886,7 +3886,7 @@ var store = __webpack_require__(67);
 var signup = function signup(formData) {
 
   return $.ajax({
-    url: config.apiUrl + '/sign-up/',
+    url: config.apiUrl + 'sign-up/',
     method: 'POST',
     data: formData
   });
@@ -3895,7 +3895,7 @@ var signup = function signup(formData) {
 var signin = function signin(formData) {
 
   return $.ajax({
-    url: config.apiUrl + '/sign-in/',
+    url: config.apiUrl + 'sign-in/',
     method: 'POST',
     data: formData
   });
@@ -3907,7 +3907,7 @@ var signout = function signout() {
   $('.unauth').show();
 
   return $.ajax({
-    url: config.apiUrl + '/sign-out/',
+    url: config.apiUrl + 'sign-out/',
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -3918,7 +3918,7 @@ var signout = function signout() {
 var changepass = function changepass(formData) {
 
   return $.ajax({
-    url: config.apiUrl + '/change-pass/',
+    url: config.apiUrl + 'change-pass/',
     method: 'PATCH',
     data: formData,
     headers: {
@@ -3932,7 +3932,7 @@ var changepass = function changepass(formData) {
 var createtraining = function createtraining() {
 
   return $.ajax({
-    url: config.apiUrl + '/training/',
+    url: config.apiUrl + 'training/',
     method: 'POST',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -3950,7 +3950,7 @@ var createtraining = function createtraining() {
 var updatetraining = function updatetraining() {
 
   return $.ajax({
-    url: config.apiUrl + '/training/' + store.training._id,
+    url: config.apiUrl + 'training/' + store.training._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -3971,7 +3971,7 @@ var deletetraining = function deletetraining() {
   $('.unauth').show();
 
   return $.ajax({
-    url: config.apiUrl + '/training/',
+    url: config.apiUrl + 'training/',
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -3981,7 +3981,7 @@ var deletetraining = function deletetraining() {
 
 var viewtraining = function viewtraining() {
   return $.ajax({
-    url: config.apiUrl + '/training/',
+    url: config.apiUrl + 'training/',
     method: 'GET'
     // headers: {
     //   Authorization: 'Bearer ' + store.user.token
@@ -3991,7 +3991,7 @@ var viewtraining = function viewtraining() {
 
 var searchtraining = function searchtraining() {
   return $.ajax({
-    url: config.apiUrl + '/training/' + store.training._id,
+    url: config.apiUrl + 'training/' + store.training._id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
