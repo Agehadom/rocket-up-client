@@ -131,7 +131,7 @@
             <button type="button" class="btn btn-outline-light auth deleteTraining" data-toggle="modal" data-target="#deleteTraining">
               Delete Training
             </button>
-            <button type="button" class="btn btn-outline-light indexTraining" data-target="#indexTraining" id="indexTraining">
+            <button type="button" class="btn btn-outline-light indexTraining" data-toggle="modal" data-target="#indexTraining" id="indexTrainingButton">
               See All Training
             </button>
             <button type="button" class="btn btn-outline-light searchTraining" data-toggle="modal" data-target="#searchTraining">
@@ -164,6 +164,10 @@
                     <label>Lesson Difficulty</label>
                     <input type="text" class="form-control" name="training[difficulty]">
                   </div>
+                  <div class="form-group">
+                    <label>Training Pack Code (Optional)</label>
+                    <input type="text" class="form-control" name="training[code]">
+                  </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
               </div>
@@ -182,7 +186,7 @@
                 </div>
 
                 <div class="modal-body">
-                  <form id="createTraining">
+                  <form id="updateTraining">
                     <div class="form-group">
                       <label>Lesson Name</label>
                       <input type="text" class="form-control" name="training[name]">
@@ -206,20 +210,39 @@
             <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="createTrainingModalLabel">Delete A Lesson</h5>
+                    <h5 class="modal-title" id="deleteTrainingModalLabel">Delete A Lesson</h5>
                     <button type="button" class="close" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
 
                   <div class="modal-body">
-                    <form id="createTraining">
+                    <form id="deleteTraining">
                       <div class="form-group">
-                        <label>Enter the ID of the lesson you wish to delete</label>
-                        <input type="text" class="form-control" name="[ID]">
+                        <label id="deleteTrainingModalLabel">Enter the ID of the lesson you wish to delete</label>
+                        <input type="text" class="form-control" name="training[_id]">
                       </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal" tabindex="-1" role="dialog" id="indexTraining">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Training Index</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body indexBody">
+                    <p></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -229,7 +252,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="createTrainingModalLabel">Search For A Lesson</h5>
+                    <h5 class="modal-title" id="searchTrainingModalLabel">Search For A Lesson</h5>
                     <button type="button" class="close" data-dismiss="modal">
                       <span aria-hidden="true">&times;</span>
                     </button>
@@ -238,10 +261,13 @@
                   <div class="modal-body">
                     <form id="searchTraining">
                       <div class="form-group">
-                        <label>Search For A Lesson via ID here</label>
-                        <input type="text" class="form-control" name="[ID]">
+                        <label id="searchTrainingModalLabel">Search For A Lesson via ID here</label>
+                        <input type="text" class="form-control" name="training[_id]">
                       </div>
                       <button type="submit" class="btn btn-primary">Submit</button>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
                     </form>
                   </div>
                 </div>

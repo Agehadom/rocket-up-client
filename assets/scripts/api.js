@@ -1,5 +1,7 @@
 const config = require('./config.js')
 const store = require('./store.js')
+const getFormFields = require('./../../lib/get-form-fields.js')
+
 
 // User API
 const signup = function (formData) {
@@ -48,7 +50,7 @@ const changepass = function (formData) {
 
 // App API
 
-const createtraining = function () {
+const createtraining = function (formData) {
 
   return $.ajax({
     url: config.apiUrl + '/training/',
@@ -56,20 +58,14 @@ const createtraining = function () {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: {
-      training: {
-          name: store.training.name,
-          type: store.training.type,
-          difficulty: store.training.difficulty
-        }
-      },
+    data: formData
   })
 }
 
-const updatetraining = function () {
+const updatetraining = function (formData) {
 
   return $.ajax({
-    url: config.apiUrl + '/training/' + store.training._id,
+    url: config.apiUrl + '/training/' + formData.training._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -84,37 +80,35 @@ const updatetraining = function () {
   })
 }
 
-const deletetraining = function () {
-
-  $('.auth').hide()
-  $('.unauth').show()
-
+const deletetraining = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/sign-out/',
+    url: config.apiUrl + '/training/' + formData.training._id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: formData
   })
 }
 
 const viewtraining = function () {
   return $.ajax({
-    url: config.apiUrl + '/training',
-    method: 'GET',
+    url: config.apiUrl + '/training/',
+    method: 'GET'
     // headers: {
     //   Authorization: 'Bearer ' + store.user.token
     // }
   })
 }
 
-const searchtraining = function () {
+const searchtraining = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/training/' + store.training._id,
+    url: config.apiUrl + '/training/' + formData.training._id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: formData
   })
 }
 
