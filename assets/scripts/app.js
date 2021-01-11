@@ -23,13 +23,12 @@ $(() => {
   $('#createTraining').on('submit', appEvents.onCreateTraining)
   $('#updateTraining').on('submit', appEvents.onUpdateTraining)
   $('#deleteTraining').on('submit', appEvents.onDeleteTraining)
-  $('#indexTraining').on('click', appEvents.onIndexTraining)
+  $('#indexTrainingButton').on('click', appEvents.onIndexTraining)
   $('#searchTraining').on('submit', appEvents.onSearchTraining)
 
-  // $('#createTraining').on('submit', appEvents.onCreateTraining)
-  // $('#updateTraining').on('submit', appEvents.onUpdateTraining)
-  // $('#deleteTraining').on('submit', appEvents.onDeleteTraining)
-  // $('#indexTraining').on('click', appEvents.onIndexTraining)
-  // $('#searchTraining').on('submit', appEvents.onSearchTraining)
+  $('#createTraining').on('click', appEvents.onCreateTrainingClick)
+  $('#updateTraining').on('click', appEvents.onUpdateTrainingClick)
+  $('#deleteTraining').on('click', appEvents.onDeleteTrainingClick)
+  $('#searchTraining').on('click', appEvents.onSearchTrainingClick)
 
 })

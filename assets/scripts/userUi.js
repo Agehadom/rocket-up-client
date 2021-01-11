@@ -15,7 +15,7 @@ const onSignInUser = function (response) {
     $('.unauth').hide()
     $('.close').trigger('click')
     $('form').trigger('reset')
-    $('.welcomeMessage h1').text("Hey " + store.user.email + "!")
+    $('.top_bar h2').text("Hey " + store.user.username + "!")
   }
 }
 

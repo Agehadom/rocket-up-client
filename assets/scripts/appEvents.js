@@ -8,9 +8,18 @@ const onCreateTraining = function (event) {
 
   $('.top_bar h2').html("Pre API Blammed")
 
-  api.createtraining()
-  .then(ui_app.onIndexTraining)
+  const form = event.target
+  const formData = getFormFields(form)
+
+  console.log(formData);
+
+  api.createtraining(formData)
+  .then(ui_app.onCreateTraining)
   .catch(ui_app.onFailure)
+}
+
+const onCreateTrainingClick = function (event) {
+  $('#createTrainingModalLabel').html("Create A Lesson")
 }
 
 const onUpdateTraining = function (event) {
@@ -18,9 +27,16 @@ const onUpdateTraining = function (event) {
 
   $('.top_bar h2').html("Pre API M.I.L.F")
 
-  api.updatetraining()
-  .then(ui_app.onIndexTraining)
+  const form = event.target
+  const formData = getFormFields(form)
+
+  api.updatetraining(formData)
+  .then(ui_app.onUpdateTraining)
   .catch(ui_app.onFailure)
+}
+
+const onUpdateTrainingClick = function (event) {
+  $('#updateTrainingModalLabel').html("Update A Lesson")
 }
 
 const onDeleteTraining = function (event) {
@@ -28,15 +44,23 @@ const onDeleteTraining = function (event) {
 
   $('.top_bar h2').html("Pre API South")
 
-  api.deletetraining()
-  .then(ui_app.onIndexTraining)
+  const form = event.target
+  const formData = getFormFields(form)
+
+  api.deletetraining(formData)
+  .then(ui_app.onDeleteTraining)
   .catch(ui_app.onFailure)
+}
+
+const onDeleteTrainingClick = function (event) {
+  $('#deleteTrainingModalLabel').html("Delete A Lesson")
 }
 
 const onIndexTraining = function (event) {
   event.preventDefault()
 
   $('.top_bar h2').html("Pre API Satin Panties")
+  $('.indexBody p').html("")
 
   api.viewtraining()
   .then(ui_app.onIndexTraining)
@@ -48,9 +72,18 @@ const onSearchTraining = function (event) {
 
   $('.top_bar h2').html("Pre API Philiy")
 
-  api.searchtraining()
-  .then(ui_app.onIndexTraining)
+  const form = event.target
+  const formData = getFormFields(form)
+
+  console.log(formData);
+
+  api.searchtraining(formData)
+  .then(ui_app.onSearchTraining)
   .catch(ui_app.onFailure)
 }
 
-module.exports = {onCreateTraining, onUpdateTraining, onDeleteTraining, onIndexTraining, onSearchTraining};
+const onSearchTrainingClick = function (event) {
+  $('#searchTrainingModalLabel').html("Search For A Lesson")
+}
+
+module.exports = {onCreateTraining, onUpdateTraining, onDeleteTraining, onIndexTraining, onSearchTraining, onCreateTrainingClick, onUpdateTrainingClick, onDeleteTrainingClick, onSearchTrainingClick};
