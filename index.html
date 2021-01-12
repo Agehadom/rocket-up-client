@@ -122,19 +122,19 @@
 
         <div class="content">
           <div class="content_button_container">
-            <button type="button" class="btn btn-outline-light auth createTraining" data-toggle="modal" data-target="#createTraining">
+            <button type="button" class="btn btn-outline-light auth createTraining" data-toggle="modal" data-target="#createTraining" id="createTrainingButton">
               Create Training
             </button>
-            <button type="button" class="btn btn-outline-light auth updateTraining" data-toggle="modal" data-target="#updateTraining">
+            <button type="button" class="btn btn-outline-light auth updateTraining" data-toggle="modal" data-target="#updateTraining" id="updateTrainingButton">
               Update Training
             </button>
-            <button type="button" class="btn btn-outline-light auth deleteTraining" data-toggle="modal" data-target="#deleteTraining">
+            <button type="button" class="btn btn-outline-light auth deleteTraining" data-toggle="modal" data-target="#deleteTraining" id="deleteTrainingButton">
               Delete Training
             </button>
             <button type="button" class="btn btn-outline-light indexTraining" data-toggle="modal" data-target="#indexTraining" id="indexTrainingButton">
               See All Training
             </button>
-            <button type="button" class="btn btn-outline-light searchTraining" data-toggle="modal" data-target="#searchTraining">
+            <button type="button" class="btn btn-outline-light searchTraining" data-toggle="modal" data-target="#searchTraining" id="searchTrainingButton">
               Search for Training
             </button>
         </div>
@@ -187,6 +187,9 @@
 
                 <div class="modal-body">
                   <form id="updateTraining">
+                    <label id="updateTrainingModalLabel">Enter the ID of the lesson you wish to update</label>
+                    <input type="text" class="form-control" name="training[_id]">
+                  </div>
                     <div class="form-group">
                       <label>Lesson Name</label>
                       <input type="text" class="form-control" name="training[name]">
@@ -239,7 +242,7 @@
                     </button>
                   </div>
                   <div class="modal-body indexBody">
-                    <p></p>
+                    <span></span>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -262,8 +265,15 @@
                     <form id="searchTraining">
                       <div class="form-group">
                         <label id="searchTrainingModalLabel">Search For A Lesson via ID here</label>
-                        <input type="text" class="form-control" name="training[_id]">
+                        <input type="text" class="form-control" name="training[id]">
                       </div>
+                      <div class="search-output">
+                        <p></p>
+                      </div>
+                      <!-- <div class="form-group">
+                        <label>Lesson Author</label>
+                        <input type="text" class="form-control" name="training[owner]">
+                      </div> -->
                       <button type="submit" class="btn btn-primary">Submit</button>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

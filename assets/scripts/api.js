@@ -70,13 +70,7 @@ const updatetraining = function (formData) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: {
-      training: {
-          name: store.training.name,
-          type: store.training.type,
-          difficulty: store.training.difficulty
-      },
-    },
+    data: formData
   })
 }
 
@@ -103,11 +97,11 @@ const viewtraining = function () {
 
 const searchtraining = function (formData) {
   return $.ajax({
-    url: config.apiUrl + '/training/' + formData.training._id,
+    url: config.apiUrl + '/training/' + formData.training.id,
     method: 'GET',
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
+    // headers: {
+    //   Authorization: 'Bearer ' + store.user.token
+    // },
     data: formData
   })
 }
