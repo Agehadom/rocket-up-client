@@ -60,7 +60,7 @@ const onIndexTraining = function (event) {
   event.preventDefault()
 
   $('.top_bar h2').html("Pre API Satin Panties")
-  $('.indexBody p').html("")
+  $('.indexBody').html("")
 
   api.viewtraining()
   .then(ui_app.onIndexTraining)
@@ -70,6 +70,7 @@ const onIndexTraining = function (event) {
 const onSearchTraining = function (event) {
   event.preventDefault()
 
+  $('.search-output p').html("")
   $('.top_bar h2').html("Pre API Philiy")
 
   const form = event.target
@@ -84,6 +85,7 @@ const onSearchTraining = function (event) {
 
 const onSearchTrainingClick = function (event) {
   $('#searchTrainingModalLabel').html("Search For A Lesson")
+  $('.search-output p').html("")
 }
 
 module.exports = {onCreateTraining, onUpdateTraining, onDeleteTraining, onIndexTraining, onSearchTraining, onCreateTrainingClick, onUpdateTrainingClick, onDeleteTrainingClick, onSearchTrainingClick};

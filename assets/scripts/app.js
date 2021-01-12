@@ -20,15 +20,17 @@ $(() => {
   $('#change-pass').on('submit', userEvents.onChangePass)
   $('#change-pass').on('click', userEvents.onChangePassClick)
 
+  // App
+
   $('#createTraining').on('submit', appEvents.onCreateTraining)
   $('#updateTraining').on('submit', appEvents.onUpdateTraining)
   $('#deleteTraining').on('submit', appEvents.onDeleteTraining)
-  $('#indexTrainingButton').on('click', appEvents.onIndexTraining)
   $('#searchTraining').on('submit', appEvents.onSearchTraining)
 
-  $('#createTraining').on('click', appEvents.onCreateTrainingClick)
-  $('#updateTraining').on('click', appEvents.onUpdateTrainingClick)
-  $('#deleteTraining').on('click', appEvents.onDeleteTrainingClick)
-  $('#searchTraining').on('click', appEvents.onSearchTrainingClick)
+  $('#createTrainingButton').on('click', appEvents.onCreateTrainingClick)
+  $('#updateTrainingButton').on('click', appEvents.onUpdateTrainingClick)
+  $('#deleteTrainingButton').on('click', appEvents.onDeleteTrainingClick)
+  $('#indexTrainingButton').on('click', appEvents.onIndexTraining)
+  $('#searchTrainingButton').on('click', appEvents.onSearchTrainingClick)
 
 })
