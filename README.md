@@ -3,7 +3,7 @@ Rocket Up is a self-evaluative training tool for players of Rocket League that w
 
 ## Planning Story
 
-The [Rocket Up Client] (https://agehadom.github.io/rocket-up-client/) and the [Rock Up API] (https://serene-bastion-18925.herokuapp.com/) were designed with a desire to consolidate the existing and future resources created by the Rocket League community. Typically, to get your hands on these resources, you have to dig through Youtube and follow specific players and community members that make these guides and training packs. Because of this, a lot of players will often find themselves struggling to learn how to train and what they should even be practicing.
+The [Rocket Up Client](https://agehadom.github.io/rocket-up-client/) and the [Rock Up API](https://serene-bastion-18925.herokuapp.com/) were designed with a desire to consolidate the existing and future resources created by the Rocket League community. Typically, to get your hands on these resources, you have to dig through Youtube and follow specific players and community members that make these guides and training packs. Because of this, a lot of players will often find themselves struggling to learn how to train and what they should even be practicing.
 
 The Rocket Up Client will give all creators and players *ONE* place where you can post, not only training packs but make full training guides as supplements for the packs.
 
