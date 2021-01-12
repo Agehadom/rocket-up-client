@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Rocket Up</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body>
+
+      <main>
+
+        <div class="top_bar">
+          <div class="cum">
+            <button type="button" class="btn btn-outline-light unauth" data-toggle="modal" data-target="#register">
+              Register
+            </button>
+            <button type="button" class="btn btn-outline-light unauth" data-toggle="modal" data-target="#log-in">
+              Login
+            </button>
+            <button type="button" class="btn btn-outline-light auth" data-target="#log-out" id="log-out">
+              Log Out
+            </button>
+            <button type="button" class="btn btn-outline-light auth" data-toggle="modal" data-target="#change-pass">
+              Change Password
+            </button>
+          </div>
+          <h1>Welcome to the Rocket Up Application Alpha</h1>
+          <h2>Output User Information Here</h2>
+        </div>
+
+        <div class="modal" id="register" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="registerModalLabel">Registration</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <form id="registration">
+                    <div class="form-group">
+                      <label>Desired Username</label>
+                      <input type="text" class="form-control" name="credentials[username]">
+                    </div>
+                    <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" class="form-control" name="credentials[password]">
+                    </div>
+                    <div class="form-group">
+                      <label>Confirm Password</label>
+                      <input type="password" class="form-control" name="credentials[password_confirmation]">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="log-in" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <form id="log-in">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="text" class="form-control" name="credentials[username]">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" name="credentials[password]">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <div class="modal" id="change-pass" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="changePassModalLabel">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <form id="change-pass">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Old Password</label>
+                    <input type="password" class="form-control" name="passwords[old]">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">New Password</label>
+                    <input type="password" class="form-control" name="passwords[new]">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="content_button_container">
+            <button type="button" class="btn btn-outline-light auth createTraining" data-toggle="modal" data-target="#createTraining" id="createTrainingButton">
+              Create Training
+            </button>
+            <button type="button" class="btn btn-outline-light auth updateTraining" data-toggle="modal" data-target="#updateTraining" id="updateTrainingButton">
+              Update Training
+            </button>
+            <button type="button" class="btn btn-outline-light auth deleteTraining" data-toggle="modal" data-target="#deleteTraining" id="deleteTrainingButton">
+              Delete Training
+            </button>
+            <button type="button" class="btn btn-outline-light indexTraining" data-toggle="modal" data-target="#indexTraining" id="indexTrainingButton">
+              See All Training
+            </button>
+            <button type="button" class="btn btn-outline-light searchTraining" data-toggle="modal" data-target="#searchTraining" id="searchTrainingButton">
+              Search for Training
+            </button>
+        </div>
+      </div>
+
+      <div class="modal" id="createTraining" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="createTrainingModalLabel">Create A Lesson</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <form id="createTraining">
+                  <div class="form-group">
+                    <label>Lesson Name</label>
+                    <input type="text" class="form-control" name="training[name]">
+                  </div>
+                  <div class="form-group">
+                    <label>Lesson Type</label>
+                    <input type="text" class="form-control" name="training[type]">
+                  </div>
+                  <div class="form-group">
+                    <label>Lesson Difficulty</label>
+                    <input type="text" class="form-control" name="training[difficulty]">
+                  </div>
+                  <div class="form-group">
+                    <label>Training Pack Code (Optional)</label>
+                    <input type="text" class="form-control" name="training[code]">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" id="updateTraining" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="updateTrainingModalLabel">Update A lesson</h5>
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <form id="updateTraining">
+                    <label id="updateTrainingModalLabel">Enter the ID of the lesson you wish to update</label>
+                    <input type="text" class="form-control" name="training[_id]">
+                  </div>
+                    <div class="form-group">
+                      <label>Lesson Name</label>
+                      <input type="text" class="form-control" name="training[name]">
+                    </div>
+                    <div class="form-group">
+                      <label>Lesson Type</label>
+                      <input type="text" class="form-control" name="training[type]">
+                    </div>
+                    <div class="form-group">
+                      <label>Lesson Difficulty</label>
+                      <input type="text" class="form-control" name="training[difficulty]">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="deleteTraining" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="deleteTrainingModalLabel">Delete A Lesson</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    <form id="deleteTraining">
+                      <div class="form-group">
+                        <label id="deleteTrainingModalLabel">Enter the ID of the lesson you wish to delete</label>
+                        <input type="text" class="form-control" name="training[_id]">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal" tabindex="-1" role="dialog" id="indexTraining">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Training Index</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body indexBody">
+                    <span></span>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          <div class="modal" id="searchTraining" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="searchTrainingModalLabel">Search For A Lesson</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                    <form id="searchTraining">
+                      <div class="form-group">
+                        <label id="searchTrainingModalLabel">Search For A Lesson via ID here</label>
+                        <input type="text" class="form-control" name="training[id]">
+                      </div>
+                      <div class="search-output">
+                        <p></p>
+                      </div>
+                      <!-- <div class="form-group">
+                        <label>Lesson Author</label>
+                        <input type="text" class="form-control" name="training[owner]">
+                      </div> -->
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      </main>
+
+    </body>
+
+</html>
