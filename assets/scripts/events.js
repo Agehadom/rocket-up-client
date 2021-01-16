@@ -10,8 +10,6 @@ const onRegisterUser = function (event) {
   const form = event.target
   const formData = getFormFields(form)
 
-  console.log(formData);
-
   api.signup(formData)
   .then(ui_user.onRegisterUser)
   .catch(ui_user.onRegisterFailure)
