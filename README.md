@@ -13,6 +13,12 @@ The Rocket Up Client will give all creators and players *ONE* place where you ca
 - HTML / CSS / Bootstrap
 - AJAX
 
+## User Stories
+As a new user, I want to be able to hold an account where I can see my growth.
+As a returning user, I want to be able to see and easily access my current regimen.
+As a power user, I want to be able to target areas of weakness in my play.
+As a creator or trainer, I want to be able to create regimens that users can easily begin.
+
 ## Entity Relationship Diagram
 
 ![User Training Relationship](https://i.imgur.com/E0AHH9n.png)

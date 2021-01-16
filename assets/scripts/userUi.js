@@ -16,7 +16,6 @@ const onSignInUser = function (response) {
     $('.close').trigger('click')
     $('form').trigger('reset')
     $('.top_bar h2').text("Hey " + store.user.username + "!")
-    console.log(store);
   }
 }
 

@@ -11,8 +11,6 @@ const onCreateTraining = function (event) {
   const form = event.target
   const formData = getFormFields(form)
 
-  console.log(formData);
-
   api.createtraining(formData)
   .then(ui_app.onCreateTraining)
   .catch(ui_app.onFailure)
@@ -59,7 +57,7 @@ const onDeleteTrainingClick = function (event) {
 const onIndexTraining = function (event) {
   event.preventDefault()
 
-  $('.top_bar h2').html("Pre API Satin Panties")
+  $('.top_bar h2').html("Here are some training packs!")
   $('.indexBody').html("")
 
   api.viewtraining()
@@ -71,12 +69,10 @@ const onSearchTraining = function (event) {
   event.preventDefault()
 
   $('.search-output p').html("")
-  $('.top_bar h2').html("Pre API Philiy")
+  $('.top_bar h2').html("Is this the pack you were looking for?")
 
   const form = event.target
   const formData = getFormFields(form)
-
-  console.log(formData);
 
   api.searchtraining(formData)
   .then(ui_app.onSearchTraining)
