@@ -16873,7 +16873,6 @@ var onSignInUser = function onSignInUser(response) {
     $('.close').trigger('click');
     $('form').trigger('reset');
     $('.top_bar h2').text("Hey " + store.user.username + "!");
-    console.log(store);
   }
 };
 
@@ -16930,8 +16929,6 @@ var onCreateTraining = function onCreateTraining(event) {
   var form = event.target;
   var formData = getFormFields(form);
 
-  console.log(formData);
-
   api.createtraining(formData).then(ui_app.onCreateTraining).catch(ui_app.onFailure);
 };
 
@@ -16972,7 +16969,7 @@ var onDeleteTrainingClick = function onDeleteTrainingClick(event) {
 var onIndexTraining = function onIndexTraining(event) {
   event.preventDefault();
 
-  $('.top_bar h2').html("Pre API Satin Panties");
+  $('.top_bar h2').html("Here are some training packs!");
   $('.indexBody').html("");
 
   api.viewtraining().then(ui_app.onIndexTraining).catch(ui_app.onFailure);
@@ -16982,12 +16979,10 @@ var onSearchTraining = function onSearchTraining(event) {
   event.preventDefault();
 
   $('.search-output p').html("");
-  $('.top_bar h2').html("Pre API Philiy");
+  $('.top_bar h2').html("Is this the pack you were looking for?");
 
   var form = event.target;
   var formData = getFormFields(form);
-
-  console.log(formData);
 
   api.searchtraining(formData).then(ui_app.onSearchTraining).catch(ui_app.onFailure);
 };
@@ -17011,24 +17006,22 @@ var store = __webpack_require__(67);
 //const break = ('\n')
 
 var onCreateTraining = function onCreateTraining() {
-  $('.top_bar h2').html("Post API High");
+  $('.top_bar h2').html("You made a training pack! Nice.");
   $('#createTrainingModalLabel').text("Training has been added to the database!");
   $('form').trigger('reset');
 };
 
 var onUpdateTraining = function onUpdateTraining() {
-  $('.top_bar h2').html("Post API Rainbow Skies");
+  $('.top_bar h2').html("Thanks for updating one of your packs.");
   $('#updateTrainingModalLabel').text("Training has been updated!");
   $('form').trigger('reset');
 };
 
 var onIndexTraining = function onIndexTraining(res) {
   var trainingListing = res.trainings;
-  console.log(trainingListing);
 
   //const trainingTXT = JSON.stringify(res.trainings[0].name)
   trainingListing.forEach(function (training) {
-    console.log(training);
     $('.indexBody').append("Search ID: " + training._id + "<br>");
     $('.indexBody').append("Name: " + training.name + "<br>");
     $('.indexBody').append("Type: " + training.type + "<br>");
@@ -17043,21 +17036,15 @@ var onIndexTraining = function onIndexTraining(res) {
 
 var onDeleteTraining = function onDeleteTraining(res) {
   //const trainingListing = res.trainings
-  console.log("Made it the APP");
-  console.log(store);
-  $('.top_bar h2').text("POST API Northern Lights");
+  $('.top_bar h2').text("You murdered that poor, little training pack.");
   $('#deleteTrainingModalLabel').html("Training Bombed!");
-
   $('form').trigger('reset');
 };
 
 var onSearchTraining = function onSearchTraining(res) {
   var trainingListing = res.training;
-  console.log("Search made it to the app");
-  console.log(res.training);
 
   trainingListing.forEach(function (training) {
-    console.log(training);
     $('.search-output p').append("Name: " + training.name + "<br>");
     $('.search-output p').append("Type: " + training.type + "<br>");
     $('.search-output p').append("Difficulty: " + training.difficulty + "<br>");
@@ -17069,7 +17056,7 @@ var onSearchTraining = function onSearchTraining(res) {
 };
 
 var onFailure = function onFailure() {
-  $('.top_bar h2').text("BORKED");
+  $('.top_bar h2').html("Critical Error<br>If you see this, something odd happened!<br>The API may be unavailable!");
 };
 
 module.exports = { onCreateTraining: onCreateTraining, onUpdateTraining: onUpdateTraining, onIndexTraining: onIndexTraining, onDeleteTraining: onDeleteTraining, onSearchTraining: onSearchTraining, onFailure: onFailure };
